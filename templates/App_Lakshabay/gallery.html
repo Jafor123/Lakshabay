@@ -1,0 +1,28 @@
+{% extends 'App_Lakshabay/base.html' %}
+{% load static %}
+{% block content %}
+
+                <section  id="gallery" class="gallery-area ptb-100 pb-0">
+                    <div  class="container">
+                        <div class="section-title">
+                            <span>Gallery</span>
+                            <h2>LAKSHA BAY GALLERY</h2>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-4">
+                        {% for g in gallery %}
+                        <div  class="col-lg-3 col-sm-6 col-md-6 p-0">
+                            <div class="single-image">
+                                <img src="{{ g.image.url }}" alt="gallery-img">
+                                <a  href="{{ g.image.url }}" class="popup-btn">
+                                    <i class="icofont-search-restaurant"></i></a>
+                                <div  class="image-content">
+                                    <h3><a  href="">{{ g.gallery_name }}</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'App_Lakshabay/base.html' %}
+{% load static %}
+{% block content %}
+            <section  class="menu-area ptb-100">
+                <div class="container">
+                    <div class="section-title">
+                        <span>Discover</span>
+                        <h2>Our Special Menu</h2>
+                    </div>
+                   <div class="tab">
+                    <ul class="tabs active">
+                               {%for cat in menu_cat%}
+                                <li>
+                                <a class="tablinks" onclick="openCity(event, '{{ cat.menu_cat_id }}')">
+                                    <i>
+                                        <img src="{{ cat.file.url }}" width="30" height="30">
+                                    </i>
+                                    <h6>{{ cat }}</h6>
+                                </a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                        <div class="tab_content">
+                             {%for cat in menu_cat %}
+                                <div id="{{ cat.menu_cat_id }}" class="tabs_item">
+                                    <div class="row">
+                                       {% for foo in  itm %}
+                                            {% if foo.item_category == cat %}
+                                                <div class="col-lg-6 col-md-12">
+                                            <div  class="single-menu" >
+                                                <div  class="food-menu-content">
+                                                    <p class="text-light">{{ foo.item_description }}</p>
+                                                </div>
+                                                <a class="cart-btn" href="{% url 'App_Order:item_ad' foo.item_id %}">Add to Cart</a>
+                                            </div>
+                                        </div>
+                                            {% endif %}
+                                       {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="line-bg">
+                    <img  src="{% static 'assets/img/line.png' %}" alt="line" /></div>
+            </section>
+
+
+{% endblock %}

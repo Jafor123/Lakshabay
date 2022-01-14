@@ -1,0 +1,18 @@
+{% extends 'App_Lakshabay/base.html' %}
+{% load static %}
+{% block content %}
+            <section  id="menu" class="menu-area ptb-100">
+                <div class="container">
+                    <div class="section-title">
+                        <span>Success Page</span>
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                          <h4 class="alert-heading">Well Done!</h4>
+  <p>You have successfully completed your payment.</p>
+</div>
+
+                </div>
+                <div class="line-bg">
+                    <img src="{% static 'assets/img/line.png' %}" alt="line" /></div>
+            </section>
+{% endblock %}

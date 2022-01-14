@@ -1,0 +1,235 @@
+{% extends 'App_Lakshabay/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .cart-btn{
+                background: #ffffff;
+    padding: 2px 6px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000000;
+        }
+    .shopping-cart {
+  width: 750px;
+  height: auto;
+  margin: 80px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+    .title {
+  height: 60px;
+  border-bottom: 1px solid #E1E8EE;
+  padding: 20px 30px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.item {
+  padding: 20px 30px;
+  height: 120px;
+  display: flex;
+}
+
+.item:nth-child(20) {
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+}
+    .buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
+}
+@keyframes animate {
+  0%   { background-position: left;  }
+  50%  { background-position: right; }
+  100% { background-position: right; }
+}
+
+.description {
+  padding-top: 15px;
+  margin:0 auto;
+  width: auto;
+}
+
+.description span {
+  display: block;
+  font-size: 14px;
+  color: #43484D;
+  font-weight: 400;
+}
+
+.description span:first-child {
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+}
+    .quantity {
+  padding-top: 20px;
+  margin-right: 60px;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+
+button[class*=btn] {
+  width: 30px;
+  height: 30px;
+  background-color: #E1E8EE;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.minus-btn img {
+  margin-bottom: 3px;
+}
+.plus-btn img {
+  margin-top: 2px;
+}
+
+button:focus,
+input:focus {
+  outline:0;
+}
+.total-price {
+  width: 83px;
+  padding-top: 21px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+@media (max-width: 800px) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image img {
+    width: 50%;
+  }
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+  .buttons {
+    margin-right: 20px;
+  }
+}
+</style>
+    <section class="menu-area ptb-100">
+    <div class="container">
+         <div class="section-title">
+            <span>Discover</span>
+               <h2>Our Cart Zone</h2>
+          </div>
+
+                          {%for message in messages %}
+                     {%if "cart" in message.tags %}
+                      <div class="alert alert-primary" role="alert">
+                     {{ message }}
+                    </div>
+                {% endif %}
+              {% endfor %}
+        <div class="list-group">
+            {% for cart in carts %}
+                {% if cart.item2 == None %}
+                <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <a href="{% url 'App_Order:remove' pk=cart.item.pk %}">
+                        <img src="https://www.seekpng.com/png/detail/97-970602_trash-garbage-recycle-bin-svg-png-icon-free.png" alt="twbs" width="20" height="20" class="rounded-circle flex-shrink-0">
+                    </a>
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                      <div class="col-md-6">
+                        <h6 class="mb-0">{{cart.item.gift_name}}</h6>
+                      </div>
+                      <div class="col-md-3" style="width: 40%;">
+                       <a class="plus-btn" href="{% url 'App_Order:decrease' pk=cart.item.pk %}">
+                                            <i class="icofont-minus-circle"></i>
+                                          </a>
+                                           <b>{{ cart.quantity }}</b>
+                                          <a class="minus-btn" href="{% url 'App_Order:increase' pk=cart.item.pk %}">
+                                            <i class="icofont-plus-circle"></i>
+                                          </a>
+                      </div>
+                      <div>
+                        <h6 class="mb-0">
+                            <b> {{ cart.quantity }} X £{{cart.item.gift_price}} = {{ cart.get_total }}</b>
+                        </h6>
+                      </div>
+                    </div>
+                </div>
+                {% else %}
+                 <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <a href="{% url 'App_Order:item_remove' pk=cart.item2.pk %}">
+                <img src="https://www.seekpng.com/png/detail/97-970602_trash-garbage-recycle-bin-svg-png-icon-free.png" alt="twbs" width="20" height="20" class="rounded-circle flex-shrink-0">
+            </a>
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div class="col-md-6">
+                <h6 class="mb-0">{{cart.item2.item_name}}</h6>
+              </div>
+              <div class="col-md-3" style="width: 40%;">
+                <a class="plus-btn" href="{% url 'App_Order:item_decrease' pk=cart.item2.pk %}">
+                               <i class="icofont-minus-circle"></i>
+                              </a>
+                                 <b>{{ cart.quantity }}</b>
+                              <a class="minus-btn" href="{% url 'App_Order:item_increase' pk=cart.item2.pk %}">
+                                <i class="icofont-plus-circle"></i>
+                              </a>
+              </div>
+              <div>
+                <h6 class="mb-0">
+                    <b> {{ cart.quantity }} X £{{cart.item2.item_price}} = {{ cart.get_total }}</b>
+                </h6>
+              </div>
+            </div>
+          </div>
+                {% endif %}
+            {% endfor %}
+         <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div class="col-md-8">
+                <h6 class="mb-0">Total</h6>
+              </div>
+              <div>
+                <h6 class="mb-0">
+                    <b> £{{order.get_totals | floatformat:2 }} </b>
+                </h6>
+              </div>
+            </div>
+          </div>
+        <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div class="col-md-8 col-sm-12">
+                  <a href="{% url 'App_Lakshabay:onlineorder' %}" class="btn btn-warning mr-4">Continue Shoping</a>
+              </div>
+              <div class="col-md-8 col-sm-12">
+                <a href="{% url 'App_Payment:checkout' %}" class="btn btn-success mr-4">Proceed To Checkout</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
+
+{% endblock %}

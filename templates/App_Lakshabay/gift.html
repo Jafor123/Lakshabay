@@ -1,0 +1,61 @@
+{% extends 'App_Lakshabay/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .cart-btn{
+                background: #ffffff;
+    padding: 2px 6px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000000;
+        }
+    </style>
+            <section  class="menu-area ptb-100">
+                <div class="container">
+                    <div class="section-title">
+                        <span>Discover</span>
+                        <h2>Our Special Gift's Zone</h2>
+                    </div>
+                    <div class="tab">
+                        <ul class="tabs active">
+
+                              {%for cat in cats%}
+                                <li>
+                                <a class="tablinks" onclick="openCity(event, '{{ cat.category_id }}')">
+                                    <i class="icofont-gift">
+
+                                    </i>
+                                    <h6>{{ cat }}</h6>
+                                </a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                        <div class="tab_content" >
+                             {%for cat in cats %}
+                                <div id="{{ cat.category_id }}" class="tabs_item">
+                                    <div class="row">
+                                       {% for foo in  gifts %}
+                                            {% if foo.gift_category == cat %}
+                                       <div class="col-lg-6 col-md-12">
+                                            <div  class="single-menu" >
+                                                <div  class="food-menu-content">
+                                                    <h3>{{ foo.gift_name }} <span  class="menu-price">&#163;{{ foo.gift_price }}</span></h3>
+                                                    <p class="text-light">{{ foo.gift_description }}</p>
+                                                </div>
+                                                <a class="cart-btn" href="{% url 'App_Order:add' pk=foo.pk  %}">Add to Cart</a>
+                                            </div>
+                                        </div>
+                                           {% endif %}
+                                       {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div  class="line-bg"><img src="{% static  'assets/img/line.png' %}" alt="line" /></div>
+            </section>
+
+
+{% endblock %}

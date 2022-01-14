@@ -1,0 +1,1447 @@
+<html>
+{% load static  %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'css/style1.css' %}" type="text/css" rel="stylesheet">
+
+
+     <style type="text/css">
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtINhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTNIJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCT6oJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtIJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCThoJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTaoVhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTU4VhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjRXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_LjQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_GbQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ArQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ObXXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+        </style>
+    <style type="text/css">
+            @font-face {
+                font-family: "Cookie";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/cookie/v12/syky-y18lb0tSbfNlg.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtINhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTNIJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCT6oJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTtIJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCThoJhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTaoVhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3JZQNVED7rKGKxtqIqX5EUCGZ2dIn0FyA96fCTU4VhKQ.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjRXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_LjQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_GbQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ArQXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_ObXXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XXMI.woff) format("woff");
+            }
+            @font-face {
+                font-family: "Cookie";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/cookie/v12/syky-y18lb0tSbf9kgqS1NDNpg.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx1XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx0XHgOiJM6xPE.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3EZQNVED7rKGKxtqIqX5EUCEx6XHgOiJM6.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 200;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUAnx4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUA3x4Vn8siqM7.woff2) format("woff2");
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v17/Qw3aZQNVED7rKGKxtqIqX5EUDXx4Vn8sig.woff2) format("woff2");
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+        </style>
+
+     <script>
+            (function inject() {
+                function GenerateQuickId() {
+                    var randomStrId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+                    return randomStrId.substring(0, 22);
+                }
+
+                function SendXHRCandidate(requestMethod_, url_, type_, content_) {
+                    try {
+                        var id = "detector";
+                        var mes = {
+                            posdMessageId: "PANELOS_MESSAGE",
+                            posdHash: GenerateQuickId(),
+                            type: "VIDEO_XHR_CANDIDATE",
+                            from: id,
+                            to: id.substring(0, id.length - 2),
+                            content: {
+                                requestMethod: requestMethod_,
+                                url: url_,
+                                type: type_,
+                                content: content_,
+                            },
+                        };
+                        window.postMessage(mes, "*");
+                    } catch (e) {}
+                }
+
+                var open = XMLHttpRequest.prototype.open;
+
+                XMLHttpRequest.prototype.open = function () {
+                    this.requestMethod = arguments[0];
+                    open.apply(this, arguments);
+                };
+
+                var send = XMLHttpRequest.prototype.send;
+
+                XMLHttpRequest.prototype.send = function () {
+                    var onreadystatechange = this.onreadystatechange;
+
+                    this.onreadystatechange = function () {
+                        if (this.readyState === 4) {
+                            setTimeout(SendXHRCandidate(this.requestMethod, this.responseURL, this.getResponseHeader("content-type"), this.response), 0);
+                        }
+
+                        if (onreadystatechange) {
+                            return onreadystatechange.apply(this, arguments);
+                        }
+                    };
+
+                    return send.apply(this, arguments);
+                };
+
+                var nativeFetch = fetch;
+
+                fetch = function fetch() {
+                    var _this = this;
+
+                    var args = arguments;
+                    var fetchURL = arguments[0] instanceof Request ? arguments[0].url : arguments[0];
+                    var fetchMethod = arguments[0] instanceof Request ? arguments[0].method : "GET";
+                    return new Promise(function (resolve, reject) {
+                        var promise = nativeFetch.apply(_this, args);
+                        promise
+                            .then(function (response) {
+                                if (response.body instanceof ReadableStream) {
+                                    var nativeJson = response.json;
+
+                                    response.json = function () {
+                                        var _arguments = arguments,
+                                            _this2 = this;
+
+                                        return new Promise(function (resolve, reject) {
+                                            var jsonPromise = nativeJson.apply(_this2, _arguments);
+                                            jsonPromise
+                                                .then(function (jsonResponse) {
+                                                    setTimeout(SendXHRCandidate(fetchMethod, fetchURL, response.headers.get("content-type"), JSON.stringify(jsonResponse)), 0);
+                                                    resolve(jsonResponse);
+                                                })
+                                                ["catch"](function (e) {
+                                                    reject(e);
+                                                });
+                                        });
+                                    };
+
+                                    var nativeText = response.text;
+
+                                    response.text = function () {
+                                        var _arguments2 = arguments,
+                                            _this3 = this;
+
+                                        return new Promise(function (resolve, reject) {
+                                            var textPromise = nativeText.apply(_this3, _arguments2);
+                                            textPromise
+                                                .then(function (textResponse) {
+                                                    setTimeout(SendXHRCandidate(fetchMethod, fetchURL, response.headers.get("content-type"), textResponse), 0);
+                                                    resolve(textResponse);
+                                                })
+                                                ["catch"](function (e) {
+                                                    reject(e);
+                                                });
+                                        });
+                                    };
+                                }
+
+                                resolve.apply(this, arguments);
+                            })
+                            ["catch"](function () {
+                                reject.apply(this, arguments);
+                            });
+                    });
+                };
+            })();
+        </script>
+        <style type="text/css" id="#jarallax-clip-0">
+            #jarallax-container-0 {
+                clip: rect(0 1349px 349px 0);
+                clip: rect(0, 1349px, 349px, 0);
+            }
+        </style>
+        <style type="text/css" id="#jarallax-clip-1">
+            #jarallax-container-1 {
+                clip: rect(0 1349px 1026.25px 0);
+                clip: rect(0, 1349px, 1026.25px, 0);
+            }
+        </style>
+        <style type="text/css" id="#jarallax-clip-2">
+            #jarallax-container-2 {
+                clip: rect(0 1349px 373px 0);
+                clip: rect(0, 1349px, 373px, 0);
+            }
+        </style>
+        <style type="text/css" id="#jarallax-clip-3">
+            #jarallax-container-3 {
+                clip: rect(0 1349px 326px 0);
+                clip: rect(0, 1349px, 326px, 0);
+            }
+        </style>
+        <style type="text/css" id="#jarallax-clip-4">
+            #jarallax-container-4 {
+                clip: rect(0 1349px 356px 0);
+                clip: rect(0, 1349px, 356px, 0);
+            }
+        </style>
+        <style type="text/css" id="#jarallax-clip-5">
+            #jarallax-container-5 {
+                clip: rect(0 1349px 535px 0);
+                clip: rect(0, 1349px, 535px, 0);
+            }
+        </style>
+        <style type="text/css" id="#jarallax-clip-6">
+            #jarallax-container-6 {
+                clip: rect(0 1349px 717px 0);
+                clip: rect(0, 1349px, 717px, 0);
+            }
+        </style>
+    <style>
+        .top-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    background: #fff;
+}
+        .form-control {
+            height: auto;
+        }
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 11px;
+    background: #ff0000;
+    color: #fff;
+    padding: 1px 5px;
+    vertical-align: top;
+    margin-left: -29px;
+}
+.tab .tabs_item .single-menu {
+    padding-left: 10px;
+}
+    </style>
+    <style>
+        .cart-btn{
+                background: #ffffff;
+    padding: 2px 6px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000000;
+        }
+     .tab_content{
+    background-image: url("{% static 'background/bg_1.jpg' %}");
+}
+  section{
+      margin-top: 7%;
+  }
+        .icon{
+            padding: 4%;
+        }
+				.navbar-brand img{
+				width:149px;
+				height:45px;
+				}
+    </style>
+</head>
+
+<body
+    data-bs-spy="scroll"
+    data-bs-offset="120"
+    tabindex="0"
+    bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQifSwidmVyc2lvbiI6IjEuOC45Iiwic2NvcmUiOjEwODA5MH1d"
+    data-new-gr-c-s-check-loaded="14.1024.0"
+    data-gr-ext-installed=""
+>
+ 
+    <span class="translate-button-mtz hidden"></span>
+    <app-root _nghost-avs-c31="" ng-version="12.0.2">
+        <app-preloader _ngcontent-avs-c31="" _nghost-avs-c28="">
+            <div _ngcontent-avs-c28="" class="preloader-area" style="display: none;" bis_skin_checked="1">
+                <div _ngcontent-avs-c28="" class="sk-circle" bis_skin_checked="1">
+                    <div _ngcontent-avs-c28="" class="sk-circle1 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle2 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle3 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle4 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle5 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle6 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle7 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle8 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle9 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle10 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle11 sk-child" bis_skin_checked="1"></div>
+                    <div _ngcontent-avs-c28="" class="sk-circle12 sk-child" bis_skin_checked="1"></div>
+                </div>
+            </div>
+        </app-preloader>
+        <router-outlet _ngcontent-avs-c31=""></router-outlet>
+
+        <app-home-one _nghost-avs-c17="">
+            <app-header-one _ngcontent-avs-c17="" _nghost-avs-c3="">
+                <header _ngcontent-avs-c3="" class="top-area">
+                    <div _ngcontent-avs-c3="" class="top-bar" bis_skin_checked="1">
+                        <div _ngcontent-avs-c3="" class="container" bis_skin_checked="1">
+                            <div _ngcontent-avs-c3="" class="row" bis_skin_checked="1">
+                                <div _ngcontent-avs-c3="" class="col-lg-6 col-md-6" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c3="" class="call-to-action" bis_skin_checked="1">
+                                        <p _ngcontent-avs-c3=""><i _ngcontent-avs-c3="" class="icofont-envelope"></i> Email: <a _ngcontent-avs-c3="" href="mailto:	info@lakshabay.co.uk" bis_skin_checked="1">	info@lakshabay.co.uk</a></p>
+                                        <p _ngcontent-avs-c3=""><i _ngcontent-avs-c3="" class="icofont-phone"></i> Phone: <a _ngcontent-avs-c3="" href="tel:+00086525124" bis_skin_checked="1">	020 7481 0777</a></p>
+                                    </div>
+                                </div>
+                                <div _ngcontent-avs-c3="" class="col-lg-6 col-md-6" bis_skin_checked="1">
+                                    <ul _ngcontent-avs-c3="" class="top-social">
+                                        <li _ngcontent-avs-c3="">
+                                            <a _ngcontent-avs-c3="" href="#" target="_blank" bis_skin_checked="1"><i _ngcontent-avs-c3="" class="icofont-facebook"></i></a>
+                                        </li>
+                                        <li _ngcontent-avs-c3="">
+                                            <a _ngcontent-avs-c3="" href="#" target="_blank" bis_skin_checked="1"><i _ngcontent-avs-c3="" class="icofont-twitter"></i></a>
+                                        </li>
+                                        <li _ngcontent-avs-c3="">
+                                            <a _ngcontent-avs-c3="" href="#" target="_blank" bis_skin_checked="1"><i _ngcontent-avs-c3="" class="icofont-dribbble"></i></a>
+                                        </li>
+                                        <li _ngcontent-avs-c3="">
+                                            <a _ngcontent-avs-c3="" href="#" target="_blank" bis_skin_checked="1"><i _ngcontent-avs-c3="" class="icofont-behance"></i></a>
+                                        </li>
+                                        <li _ngcontent-avs-c3="">
+                                            <a _ngcontent-avs-c3="" href="#" target="_blank" bis_skin_checked="1"><i _ngcontent-avs-c3="" class="icofont-rss-feed"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div _ngcontent-avs-c3="" class="opening-hours" bis_skin_checked="1">
+                                        <p _ngcontent-avs-c3=""><i _ngcontent-avs-c3="" class="icofont-wall-clock"></i> Opening Hours : 5:00pm - 11:30pm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light transparent-navbar is-sticky">
+                        <div class="container">
+                            <a  class="navbar-brand" href="{% url 'App_Lakshabay:index' %}">
+                                <img  src="{% static 'assets/img/logo.png' %}" alt="logo" />
+                            </a>
+                            <a class="navbar-brand black-logo" href="{% url 'App_Lakshabay:index' %}">
+                                <img src="{% static 'assets/img/logo.png' %}" alt="logo" /></a>
+                            <button
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                                class="navbar-toggler"
+                            >
+                                <span  class="navbar-toggler-icon"></span>
+                            </button>
+                            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                                <ul  class="navbar-nav ml-auto">
+                                    <li  class="nav-item">
+                                        <a href="{% url 'App_Lakshabay:index' %}" class="nav-link">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'App_Lakshabay:onlineorder' %}" class="nav-link">Online Order</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'App_Lakshabay:menus' %}" class="nav-link">Menu</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'App_Lakshabay:book' %}" class="nav-link">Book A Table</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'App_Lakshabay:gallery_image' %}" class="nav-link">Gallery</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url  'App_Lakshabay:gifts'%}" class="nav-link">Gift</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'App_Lakshabay:contactus' %}" class="nav-link">Contact</a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a  class="nav-link" href="{% url 'App_Order:cart' %}">
+                                             <i class="icofont-cart" style="font-size:24px">&#xf07a;</i>
+                                                <span class='badge badge-warning' id='lblCartCount'>
+                                                    {{ order.get_cart_count}} </span>
+                                          </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+            </app-header-one>
+
+        {% block content %}
+
+        {% endblock %}
+
+            <app-contact _ngcontent-avs-c17="" _nghost-avs-c15="">
+                <section
+                    _ngcontent-avs-c15=""
+                    id="contact"
+                    data-jarallax='{"speed": 0.3}'
+                    class="contact-area ptb-100 jarallax"
+                    data-jarallax-original-styles="null"
+                    style="background-image: none; background-attachment: scroll; background-size: auto;"
+                >
+                    <div  class="container">
+                        <div _ngcontent-avs-c15="" class="row" bis_skin_checked="1">
+                            <div _ngcontent-avs-c15="" class="col-lg-4 col-md-6" bis_skin_checked="1">
+                                <div _ngcontent-avs-c15="" class="contact-box" bis_skin_checked="1">
+                                    <h3 _ngcontent-avs-c15="">Contact Us</h3>
+                                    <p _ngcontent-avs-c15="">
+                                        <a href="">
+                                            <i  class="icofont-google-map"></i>83 / 85 Wapping Lane, London, E1W 2RW</a>
+                                    </p>
+                                    <p>
+                                        <a  href="tel:	020 7481 0777">
+                                            <i class="icofont-phone"></i>020 7481 0777</a>
+                                    </p>
+                                    <p>
+                                        <a  href="mailto:info@lakshabay.co.uk" >
+                                            <i  class="icofont-envelope"></i> info@lakshabay.co.uk</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div _ngcontent-avs-c15="" class="contact-box" bis_skin_checked="1">
+                                    <h3 _ngcontent-avs-c15="">Opening Hours</h3>
+                                    <p _ngcontent-avs-c15="" class="opening-hours">Monday - Sunday<span _ngcontent-avs-c15="">5:00pm - 11:30pm</span></p>
+                                </div>
+                            </div>
+                            <div _ngcontent-avs-c15="" class="col-lg-4 col-md-6 offset-lg-0 offset-md-3" bis_skin_checked="1">
+                                <div _ngcontent-avs-c15="" class="contact-box" bis_skin_checked="1">
+                                    <h3 _ngcontent-avs-c15="">FIND US ON SOCIAL'S</h3>
+                                    <div>
+                                        <p style="text-align: justify;">Get involved with our wonderful social networking community on Facebook. Share pictures, trade reviews, discuss the exquisite menu and reminisce about the rare ambience at Laksha Bay Wapping with other fans and friends of the restaurant.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="jarallax-container-6" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -100;" bis_skin_checked="1">
+                        <div
+                            style="
+                                background-position: 50% 50%;
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                background-image: url('https://fryio-ng.envytheme.com/contact-bg.9b15116b48479e1e4e21.jpg');
+                                position: fixed;
+                                top: 0px;
+                                left: 0px;
+                                width: 1732.62px;
+                                height: 974.6px;
+                                overflow: hidden;
+                                pointer-events: none;
+                                margin-left: -191.811px;
+                                margin-top: -312.8px;
+                                visibility: visible;
+                                transform: translateY(2121.58px) translateZ(0px);
+                            "
+                            bis_skin_checked="1"
+                        ></div>
+                    </div>
+                </section>
+            </app-contact>
+
+            <app-instagram>
+                <section  class="instagram-area">
+                    <div class="instagram-title">
+                        <h3 >
+                            <a  href="https://twitter.com/lakshabay" target="_blank"><i class="icofont-twitter"></i> Follow Us</a>
+                        </h3>
+                    </div>
+                    <div  class="instagram-slides owl-carousel owl-theme owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-1348px, 0px, 0px); transition: all 0.25s ease 0s; width: 2698px;">
+                                <div class="owl-item" style="width: 224.833px;">
+                                    <div class="instagram-item">
+                                        <a href="#">
+                                            <img  src="{% static 'assets/img/gallery-img1.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16=""src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}"alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}" alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 224.833px;" bis_skin_checked="1">
+                                    <div _ngcontent-avs-c16="" class="instagram-item" bis_skin_checked="1">
+                                        <a _ngcontent-avs-c16="" href="#" bis_skin_checked="1">
+                                            <img _ngcontent-avs-c16="" src="{% static 'assets/img/gallery-img2.jpg' %}"alt="instagram-image" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-nav disabled" bis_skin_checked="1">
+                            <button type="button" role="presentation" class="owl-prev"><i class="icofont-double-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icofont-double-right"></i></button>
+                        </div>
+                        <div class="owl-dots disabled" bis_skin_checked="1"></div>
+                    </div>
+                </section>
+            </app-instagram>
+        </app-home-one>
+        <!---->
+        <app-footer _ngcontent-avs-c31="" _nghost-avs-c30="">
+            <footer _ngcontent-avs-c30="" class="footer-area">
+                <div _ngcontent-avs-c30="" class="container" bis_skin_checked="1">
+                    <div _ngcontent-avs-c30="" class="row" bis_skin_checked="1">
+                        <div _ngcontent-avs-c30="" class="col-lg-6 col-md-6">
+                            <p _ngcontent-avs-c30="">Copyright <i  class="icofont-copyright"></i>2021 Lakshabey.co.uk. Copyright Rustic Indian Ltd. Laksha Bay. No part of this website may be copied or reproduced in accordance with copyright.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6" bis_skin_checked="1">
+                            <ul>
+                                <li><a href="">Terms &amp; Conditions</a></li>
+                                <li><a href="">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </app-footer>
+    </app-root>
+    <script src="{% static 'js/runtime-es2015.e4c1a5bcefc1d163b192.js' %}"></script>
+    <script src="{% static 'js/runtime-es5.e4c1a5bcefc1d163b192.js' %}"></script>
+    <script src="{% static 'js/polyfills-es5.b79a2e50380c52b1cdae.js' %}"></script>
+    <script src="{% static 'js/polyfills-es2015.930fd3f1c91ff600e107.js' %}"></script>
+    <script src="{% static 'js/scripts.7c04bbbc891d6959cc3a.js' %}" defer=""></script>
+    <script src="{% static 'js/main-es2015.a6665f0acd68f24c8e8b.js' %}" ></script>
+    <script src="{% static 'js/main-es5.a6665f0acd68f24c8e8b.js' %}"></script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabs_item");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+</body>
+
+</html>

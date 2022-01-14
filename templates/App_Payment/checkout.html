@@ -1,0 +1,309 @@
+{% extends 'App_Lakshabay/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+    <style>
+.section-title span {
+    display: contents;
+}
+    .form-group{
+        text-align: left;
+    }
+    .form-control {
+        height: auto;
+    }
+    </style>
+             <section  id="menu" class="menu-area ptb-100">
+             <div class="container">
+             <div class="section-title">
+
+                {% if request.user.is_authenticated %}
+                      <span>Checkout Page</span>
+                        <h2>Make Payment & Enjoy Our Food</h2>
+                    </div>
+                    <div class="modal-body">
+                    {% if orders_not_null.count != 0 %}
+                      <form  onsubmit="return validateform();" class="modalForm" method="post">{% csrf_token %}
+                                    <div class="row">
+                                       <div  class="form-group col-lg-6 col-md-6">
+                                                <label>First Name</label>
+                                                <input type="text" name="firstname"id="id_firstname" class="form-control" required>
+                                            <span id="firstname_error"></span>
+                                        </div>
+                                         <div  class="form-group col-lg-6 col-md-6">
+                                             <label>Last Name</label>
+                                             <input type="text" name="lastname" id="id_lastname" class="form-control" required>
+                                             <span id="lastname_error"></span>
+                                        </div>
+                                        <div  class="form-group col-lg-6 col-md-6">
+                                                <label>Company Name</label>
+                                                <input type="text" name="company" id="id_company" class="form-control" required>
+                                            <span id="company_error"></span>
+                                        </div>
+                                         <div  class="form-group col-lg-6 col-md-6">
+                                                <label>Country</label>
+                                                <input type="text" name="country"id="id_country" class="form-control">
+                                             <span id="country_error"></span>
+                                        </div>
+                                        <div  class="form-group col-lg-6 col-md-6">
+                                                 <label>Address 1</label>
+                                                <input type="text" name="address_1" id="id_address" class="form-control">
+                                            <span id="address_error"></span>
+                                        </div>
+                                         <div  class="form-group col-lg-6 col-md-6">
+                                               <label>Address 2 (optional)</label>
+                                                <input type="text" name="address_2" class="form-control">
+                                        </div>
+                                        <div  class="form-group col-lg-6 col-md-6">
+                                            <label>City</label>
+                                                <input type="text" name="city"id="id_city" class="form-control">
+                                            <span id="city_error"></span>
+                                        </div>
+                                         <div  class="form-group col-lg-6 col-md-6">
+                                               <label>State</label>
+                                                <input type="text" name="state" id="id_state" class="form-control">
+                                             <span id="state_error"></span>
+                                        </div>
+                                        <div  class="form-group col-lg-6 col-md-6">
+                                              <label>Zip Code</label>
+                                                <input type="text" name="zipcode" id="id_zipcode" class="form-control">
+                                            <span id="zipcode_error"></span>
+                                        </div>
+                                         <div  class="form-group col-lg-6 col-md-6">
+                                                <label>Phone</label>
+                                                <input type="text" name="phone" id="id_phone"onkeypress="return event.charCode >= 8 && event.charCode <= 57" class="form-control">
+                                             <span id="phone_error"></span>
+                                        </div>
+                                        <div  class="form-group col-lg-12 col-md-12">
+                                            <label>Additional Information(optional)</label>
+                                            <textarea class="form-control"name="additional_info" id="comm" rows="3"></textarea>
+                                            <span id="additional_error"></span>
+                                        </div>
+
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <button type="submit" class="btn btn-primary"style="margin-top: 1%;">Checkout</button>
+                                        </div>
+                                    </div>
+                                </form>
+                    {% else %}
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+</svg>
+
+<div class="alert alert-primary d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+  <div>
+    You haven't select any item yet..
+  </div>
+</div>
+                    {% endif %}
+                            </div>
+                {% else %}
+                    <span>Checkout Page</span>
+                        <h2>First SignUp</h2>
+                    <div class="modal-body">
+                                <form method="post" class="modalForm">{% csrf_token %}
+                                    <div class="row">
+                                        <div class="form-group col-lg-6 col-md-6">
+                                                {{ form.username|as_crispy_field }}
+                                        </div>
+                                        <div class="form-group col-lg-6 col-md-6">
+                                                {{ form.email|as_crispy_field }}
+                                         </div>
+                                        <div class="form-group col-lg-6 col-md-6">
+                                                {{ form.first_name|as_crispy_field }}
+                                        </div>
+                                        <div class="form-group col-lg-6 col-md-6">
+                                                {{ form.last_name|as_crispy_field }}
+                                        </div>
+                                        <div class="form-group col-lg-6 col-md-6">
+                                                {{ form.password1|as_crispy_field }}
+                                        </div>
+                                        <div class="form-group col-lg-6 col-md-6">
+                                                {{ form.password2|as_crispy_field }}
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12">
+                                            <br><br>
+                                            <button type="submit" class="btn btn-primary mt-4" style="margin-top: 1%;">Sign Up</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                {% endif %}
+             </div>
+             </section>
+
+    <script>
+    function validateform() {
+        fname=document.getElementById("id_firstname").value;
+        lname=document.getElementById("id_lastname").value;
+        cmp=document.getElementById("id_company").value;
+        cnt=document.getElementById("id_country").value;
+        ads=document.getElementById("id_address").value;
+        cts=document.getElementById("id_city").value;
+        sts=document.getElementById("id_state").value;
+        zipc=document.getElementById("id_zipcode").value;
+        pho=document.getElementById("id_phone").value;
+        message=document.getElementById("comm").value;
+        var regName = /^[a-zA-Z ]+[a-zA-Z ]+$/;
+        var regmessage = /^[a-zA-Z0-9.,""'' ]+$/;
+        var address = /^[#.0-9a-zA-Z\s,-]+$/;
+        var zip = /^[0-9]{5}/;
+    if (fname.length <= 2 && fname.length <= 20) {
+            x = document.getElementById("firstname_error");
+            x.innerText = "** firstname between 3-20 character";
+            x.style.color = "red";
+            return false;
+        }
+        if (!regName.test(fname)) {
+            x = document.getElementById("firstname_error");
+            x.innerText = "** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        } else {
+            x = document.getElementById("firstname_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+
+        if (lname.length <= 2 && lname.length <= 20) {
+            x = document.getElementById("lastname_error");
+            x.innerText = "** lastname between 3-20 character";
+            x.style.color = "red";
+            return false;
+        }
+        if (!regName.test(lname)) {
+            x = document.getElementById("lastname_error");
+            x.innerText = "** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        } else {
+            x = document.getElementById("lastname_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+
+        if (cmp.length <= 2 && cmp.length <= 20) {
+            x = document.getElementById("company_error");
+            x.innerText = "** company between 3-20 character";
+            x.style.color = "red";
+            return false;
+        }
+        if (!regName.test(cmp)) {
+            x = document.getElementById("company_error");
+            x.innerText = "** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        } else {
+            x = document.getElementById("company_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+        if (cnt.length <= 1 && cnt.length <= 20) {
+            x = document.getElementById("country_error");
+            x.innerText = "** company between 2-20 character";
+            x.style.color = "red";
+            return false;
+        }
+        if (!regName.test(cnt)) {
+            x = document.getElementById("country_error");
+            x.innerText = "** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        } else {
+            x = document.getElementById("country_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+        if (ads.length <= 2 && ads.length <= 100) {
+            x = document.getElementById("address_error");
+            x.innerText = "** ads between 3-100 character";
+            x.style.color = "red";
+            return false;
+        }
+        if (!regmessage.test(ads)) {
+            x = document.getElementById("address_error");
+            x.innerText = "** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        } else {
+            x = document.getElementById("address_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+        if (cts.length <= 2 && cts.length <= 20) {
+            x = document.getElementById("city_error");
+            x.innerText = "** city between 3-20 character";
+            x.style.color = "red";
+            return false;
+        }
+        if (!regName.test(cts)) {
+            x = document.getElementById("city_error");
+            x.innerText = "** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        } else {
+            x = document.getElementById("city_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+        if (sts.length <= 2 && sts.length <= 20) {
+            x = document.getElementById("state_error");
+            x.innerText = "** city between 3-20 character";
+            x.style.color = "red";
+            return false;
+        }
+        if (!regName.test(sts)) {
+            x = document.getElementById("state_error");
+            x.innerText = "** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        } else {
+            x = document.getElementById("state_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+        if (zipc.length != 5) {
+            x = document.getElementById("zipcode_error");
+            x.innerText = "** zipcode must be 5 character";
+            x.style.color = "red";
+            return false;
+        }
+        else {
+            x = document.getElementById("zipcode_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+        if (pho.length != 10 && pho.length !=11) {
+            x = document.getElementById("phone_error");
+            x.innerText = "** Phone must be 10 or 11 digit";
+            x.style.color = "red";
+            return false;
+        }
+        else {
+            x = document.getElementById("phone_error");
+            x.innerText = "**success";
+            x.style.color = "green";
+        }
+
+        if (!regmessage.test(message)) {
+            x = document.getElementById("message_error");
+            x.innerHTML = " ** only characters are allowed";
+            x.style.color = "red";
+            return false;
+        }
+        else{
+            x = document.getElementById("message_error");
+            x.innerHTML = " ** success";
+            x.style.color = "green";
+        }
+
+    }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'App_Superadmin/base.html' %}
+{% load static %}
+{% block content %}
+ <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Gallary Management</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'App_Lakshabay:index' %}">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+          </div>
+            <div class="col-lg-7 m-0 m-auto">
+                 {%for message in messages %}
+                    {%if "gallary" in message.tags %}
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    {{ message }}
+                  </div>
+                    {% endif %}
+                 {% endfor %}
+              <!-- General Element -->
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Update Gallery Photo</h6>
+                </div>
+                <div class="card-body">
+                  <form method="post"enctype="multipart/form-data">{% csrf_token %}
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Gallery Name</label>
+                          <input type="text" class="form-control" name="gallary_name"value="{{ my_photo.gallery_name }}" required>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" name="gallary_photo">
+                        <label class="custom-file-label" for="customFile">Choose photo</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label>uploaded photo</label>
+                       <img src="{{ my_photo.image.url }}" style="height: 200px;width: 100%;" >
+                    </div>
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          <div class="row mb-3">
+          <div class="col-lg-12">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Gallary Datatable</h6>
+                </div>
+                <div class="table-responsive p-3">
+                  <table class="table align-items-center table-flush table-hover" id="dataTableHover">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>No</th>
+                        <th>Gallary Name</th>
+                        <th>Photo</th>
+                        <th>Action</th>
+                      </tr>
+
+                    </thead>
+                    <tbody>
+                    {% for g in gallary %}
+                      <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ g.gallery_name }}</td>
+                        <td>
+                            <img src="{{ g.image.url }}" width="60px" height="60px">
+                        </td>
+                        <td>
+                            <a href="{% url 'App_Superadmin:gallary_delete' g.gallery_id %}"  onclick="return confirm('Are you sure you want to delete this item?');">
+                                <i class="fas fa-fw fa-trash" style="color: #801d3b;"></i>
+                            </a>
+                            <a href="{% url 'App_Superadmin:gallary_update' g.gallery_id %}"><i class="fas fa-fw fa-edit" style="color: #801d3b;"></i></a>
+                        </td>
+                      </tr>
+                     {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row-->
+
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="{% url 'App_Superadmin:superadmin_logout' %}" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'App_Superadmin/base.html' %}
+
+{% block content %}
+
+              <div class="col-lg-12">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Order By {{ ord }}</h6>
+                </div>
+                <div class="table-responsive p-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Order Items </h2><hr>
+             <div class="col-lg-12">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                </div>
+                <div class="table-responsive p-3">
+                  <table class="table align-items-center table-flush table-hover">
+                    <thead class="thead-light">
+                         <tr>
+                        <th>Images</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for i in ord.orderitems.all %}
+                      <tr>
+                          {% if i.item2 == None %}
+                          <td><figure><img src="{{ i.item.gift_image.url }}" width="60px" height="50px" alt=""></figure></td>
+                          <td>{{ i.item.gift_name  }}</td>
+                          <td>{{ i.quantity  }}</td>
+                          <td>{{ i.get_total  }}</td>
+                          {% else %}
+                           <td><figure><img src="{{ i.item2.photo.url }}" width="60px" height="50px"  alt=""></figure></td>
+                            <td>{{ i.item2.item_name  }}</td>
+                            <td>{{ i.quantity  }}</td>
+                            <td>{{ i.get_total  }}</td>
+                          {% endif %}
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  <tfoot class="thead-dark">
+                  <tr>
+                        <th colspan="3">Total :</th>
+                        <th colspan="1">{{ord.get_totals | floatformat:2 }}</th>
+                  </tr>
+                  </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Billing Address </h2><hr>
+           <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+          </li>
+          {% if ord.billing_address.firstname != ""%}
+               <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">First Name : {{ ord.billing_address.firstname }}</h6>
+            </div>
+          </li>
+          {% endif %}
+          {% if ord.billing_address.lastname != ""%}
+               <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Last Name : {{ ord.billing_address.lastname }}</h6>
+            </div>
+          </li>
+         {% endif %}
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Company: {{ ord.billing_address.company }}</h6>
+            </div>
+          </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Country: {{ ord.billing_address.country }}</h6>
+            </div>
+          </li>
+           <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Address 1: {{ ord.billing_address.address }}</h6>
+            </div>
+          </li>
+            {% if ord.billing_address.address2 != ""%}
+           <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Address 2: {{ ord.billing_address.address2 }}</h6>
+            </div>
+          </li>
+           {% endif %}
+           <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">City : {{ ord.billing_address.city }}</h6>
+            </div>
+          </li>
+           <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">State : {{ ord.billing_address.state }}</h6>
+            </div>
+          </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Zipcode : {{ ord.billing_address.zipcode }}</h6>
+            </div>
+          </li>
+           <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Phone : {{ ord.billing_address.phone }}</h6>
+            </div>
+          </li>
+           <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Additional Information: : {{ ord.billing_address.aditional_info }}</h6>
+            </div>
+          </li>
+        </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+              </div>
+            </div>
+{% endblock %}
